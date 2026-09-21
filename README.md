@@ -1,20 +1,51 @@
 # BenchmarkPC / Readout
 
-Configurateur PC interactif et comparateur de performances.
+Configurateur PC interactif, comparateur de configurations et prototype de benchmark.
 
-## Lancer le projet
+## Structure
 
-Le projet est un site statique. Ouvrez `index.html` dans un navigateur ou servez le dépôt avec GitHub Pages.
+```text
+BenchmarkPC/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   ├── data.js
+│   └── app.js
+├── assets/
+│   └── images/
+├── .gitignore
+├── .nojekyll
+└── README.md
+```
 
-## Structure actuelle
+## Fichiers principaux
 
-- `index.html` : application principale
-- `.gitignore` : ignore les fichiers système macOS
+- `index.html` : structure de l'interface.
+- `css/styles.css` : styles visuels et responsive.
+- `js/data.js` : données principales (écrans, builds, jeux, réglages).
+- `js/app.js` : logique du configurateur, benchmark, comparaison et BuildLab 3D.
+- `assets/images/` : images locales auparavant encodées en base64 dans le JavaScript.
 
-## Prochaines étapes
+## Lancer en local
 
-- séparer progressivement le CSS et le JavaScript du fichier principal ;
-- déplacer les médias dans `assets/` ;
-- modulariser les données des configurations PC ;
-- optimiser le chargement des images et des éléments 3D ;
-- ajouter des tests de compatibilité et de comparaison des configurations.
+Le projet est statique. Pour éviter les restrictions du protocole `file://`, lance un petit serveur local depuis le dossier du projet :
+
+```bash
+python3 -m http.server 8080
+```
+
+Puis ouvre `http://localhost:8080`.
+
+## GitHub Pages
+
+Le dépôt est compatible avec GitHub Pages depuis la branche `main` et le dossier racine `/`.
+
+## Maintenance
+
+Pour garder le projet lisible :
+
+1. ajouter les nouvelles images dans `assets/images/` au lieu de les encoder en base64 ;
+2. mettre les données de catalogue dans `js/data.js` ;
+3. garder la logique d'interface et de benchmark dans `js/app.js` ;
+4. éviter de remettre CSS et JavaScript directement dans `index.html`.
