@@ -174,7 +174,8 @@
         const fan=createFan(.48,.11,0x67dcff,true);
         fan.rotation.y=-Math.PI*.42;add(g,fan,D/2-.27,1.16-i*1.15,-.13)
       }
-      add(g,block(.055,H-.26,W-.24,0x252e37,.73,.38),D/2-.05,0,0)
+      // Open intake behind the front fans, with narrow metal uprights instead of an opaque wall.
+      for(let i=0;i<12;i++)add(g,block(.042,H-.31,.036,0x303c47,.80,.28),D/2-.045,0,-W*.43+i*W*.86/11)
     }else{
       const accent=b.caseType==='y70'?0xff4bd8:0xf5a344;
       for(let i=0;i<3;i++)add(g,createFan(.48,.10,accent,true),D/2-.38,1.16-i*1.14,-W/2+.26);
