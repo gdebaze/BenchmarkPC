@@ -1,8 +1,0 @@
-'use strict'; (() => { if (typeof THREE === 'undefined') return; const GPU_REAL = { smart: { key: sapphire9060, name: 'SAPPHIRE PULSE Radeon RX 9060 XT · 8 Go', brand: 'SAPPHIRE', image: 'https://media.cdn.sapphiretech.com cn
-slash "-/media slash sites slash Sapphire slash pim slash product-images slash 11350_05_rx9060xt_pulse_8ggddr6
-slash 11350_05_rx9060xt
-_374x265.ashx point d'interrogation v égale e 983 c 28174234
-e 18 ae7b6fe92cbf15c0,
-fans: 2, rgb: false, accent: 0xd65050, accentHex: '#ed6a6a', dims:, slots: '2,3 slots', power: '1 × 8 broches', url: 'https://www.sapphiretech.com
-slash en slash consumer slash pulse-radeon-rx-9060-xt
--8g-m-gddr6
