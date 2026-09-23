@@ -304,8 +304,15 @@
     return g
   };
 
+  function freePreviousMeshes(){
+    if(!threeRoot)return;const geo=new Set(),mats=new Set(),textures=new Set();
+    threeRoot.traverse(o=>{if(o.geometry)geo.add(o.geometry);if(o.material)(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>{if(m){mats.add(m);if(m.map?.isCanvasTexture)textures.add(m.map)}})});
+    if(typeof selectionOutline!=='undefined'&&selectionOutline){threeScene.remove(selectionOutline);selectionOutline.geometry?.dispose();selectionOutline.material?.dispose();selectionOutline=null}
+    geo.forEach(x=>x.dispose());textures.forEach(x=>x.dispose());mats.forEach(x=>x.dispose());
+  }
   const buildBase=buildThreePC;
   buildThreePC=function(b){
+    freePreviousMeshes();
     buildBase(b);
     // Disappear together with the installed components as soon as the exploded animation begins.
     const mounted=new THREE.Group();mounted.userData.mountedOnly=true;
